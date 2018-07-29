@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Basic Health Questions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <link href="healthScoreCSS.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="topBar">
+            <p>
+            Basic Information
+            </p>
+        </div>
+        <div class="questions">
+            <p>How old are you?</p>
+            <input type="text" id="age">
+            <p>How tall are you?</p>
+            <input type="text" id="height" placeholder="Feet">
+            <input type="text" id="two" placeholder="Inches">
+            <p>How much do you weigh?</p>
+            <input type="text" id="weight">
+            
+        </div>
+        <a href= "food.html">  <button onclick="firstView()">Next</button> </a>
+
+<script type="text/javascript">
+
+ function firstView() {
+
+    var age = document.getElementById("age").value;
+
+    var height = document.getElementById('height').value;
+
+    var two = document.getElementById('two').value;
+
+    var weight = document.getElementById('weight').value;
+
+    age = parseFloat(age);
+    height = parseFloat(height);
+    two = parseFloat(two);
+    weight = parseFloat(weight);
+
+
+    weight = weight * .453592;
+
+    two = two / 12;
+
+    height = (height + two) * .3048;
+
+    height = Math.pow(height, 2);
+
+    var BMI = (weight / height);
+
+    if (BMI > 50) {
+
+        BMI = 1;
+    }
+    else if (BMI > 30 && BMI < 50) {
+
+            BMI = 3;
+    }
+    else if (BMI > 25 && BMI < 40) {
+
+         BMI = 6;
+    }
+    else if (BMI > 20 && BMI < 30) {
+
+        BMI = 8;
+
+    }
+    else if (BMI > 15 && BMI < 25) {
+            BMI = 10;
+
+    }
+
+    else {
+        BMI = 5;
+    }
+
+    localStorage.setItem("view-one-value", BMI);
+
+}
+</script>
+
+
+    </body>
+</html>
+

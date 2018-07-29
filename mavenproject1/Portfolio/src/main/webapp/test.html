@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Exercise Questions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="healthScoreCSS.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="topBar">
+            <p> Exercise Habits</p>
+        </div>
+        <div class="questions">
+            <p>How many times a week do you exercise? <input type="text" id="timesPerWeek" /></p> 
+            <p>How long do you exercise for? <input type="text" id="length" /></p> 
+            <p>On a scale from 1 to 10, 10 being intense and 1 being mild. How intense do you feel your workout is? <input type="text" id="intensity" /></p> 
+            <script>
+                function saveData() {
+                    var timesPerWeek = document.getElementById("timesPerWeek").value;
+                    var length = document.getElementById("length").value;
+                    var intensity = document.getElementById("intensity").value;
+                    localStorage.setItem("exercise", '{"timesPerWeek":"' + timesPerWeek + '","length":"' + length + '","intensity":"' + intensity + '"}');
+                    var obj = JSON.parse(localStorage.getItem("exercise"));
+                    text = "<br>Time: " + obj.timesPerWeek + "<br>length: " + obj.length + "<br>intensity: " + obj.intensity;
+                    document.getElementById("test").innerHTML = text;
+                }
+
+            </script>
+        </div>
+        <!--<a href="/health-score/sleep.html">--><button onclick="saveData()">Next</button> <!-- </a> -->
+        <p id="test"></p>
+    </body>
+</html>

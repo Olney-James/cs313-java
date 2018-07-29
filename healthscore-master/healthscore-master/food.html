@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Food Questions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="healthScoreCSS.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+       <div class="topBar">
+           <p> Eating Habits</p>
+        </div>
+        <div class="questions">
+            <p>How many calories do you consume a day?</p>
+            <input type="text" id="calories">
+            <p>How often are you eating during the day?</p>
+            <input type="text" id="eat">
+            <p>How many times a week to you go out to eat?</p>
+            <input type="text" id="period">
+            <p>On a scale from 1 to 10, 10 being healthy and 1 being all junk. How healthy do you feel you eat?</p>
+            <input type="text" id="healthy">
+            
+        </div>
+        <a href="exercise.html"><button onclick="food()">Next</button> </a>
+
+        <script type="text/javascript">
+
+        function food() {
+
+             var calories = document.getElementById("calories").value;
+             var eat = document.getElementById("eat").value;
+             var period = document.getElementById("period").value;
+             var healthy = document.getElementById("healthy").value;
+
+             calories = parseFloat(calories);
+             eat = parseFloat(eat);
+             period = parseFloat(period);
+             healthy = parseFloat(healthy);
+
+
+             //Calories check
+
+             if (calories > 4000) {
+                calories = 1;
+             }
+             else if (calories > 3000 && calories <= 4000) {
+                calories = 3;
+             }
+             else if (calories > 2500 && calories <= 3000) {
+                 calories = 5;
+             }
+             else if (calories > 2000 && calories <= 2500) {
+                 calories = 8;
+
+             }
+             else if (calories < 2000 && calories > 1000) {
+
+                calories = 10;
+             }
+             else {
+                calories = 1;
+             }
+
+             // Eat check
+
+              if (eat > 8) {
+                eat = 1;
+             }
+             else if (eat > 6 && eat <= 7 ) {
+                eat = 3;
+             }
+             else if (eat > 5 && eat <= 6) {
+                 eat = 5;
+             }
+             else if (eat > 4 && eat <= 5) {
+                 eat = 8;
+
+             }
+             else if (eat < 4 && eat > 1) {
+
+                eat = 10;
+             }
+             else {
+                eat = 1;
+             }
+
+            // period check
+
+            if (period > 8) {
+                period = 1;
+             }
+             else if (period > 6 && period <= 7 ) {
+                period = 3;
+             }
+             else if (period > 5 && period <= 6) {
+                 period = 5;
+             }
+             else if (period > 4 && period <= 5) {
+                 period = 8;
+
+             }
+             else if (period < 4 && period > 1) {
+
+                period = 10;
+             }
+             else {
+                period = 1;
+             }
+
+             var final = (calories + eat + period + healthy) / 4;
+
+
+            localStorage.setItem("view-second-value", final);
+
+
+        }
+
+
+        </script>
+
+    </body>
+</html>

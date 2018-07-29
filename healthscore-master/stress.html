@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Stress Questions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="healthScoreCSS.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="topBar">
+            <p> Stress Habits </p>
+        </div>
+        <div class="questions">
+          <p>On a scale from 1 to 10, 10 being extreme stress and 1 being mild stress. How stressed are you?</p>
+          <div class="dropdown">
+              <select id="theDropdown">
+                  <option value="first">1</option>
+                  <option value="second">2</option>
+                  <option value="third">3</option>
+                  <option value="fourth">4</option>
+                  <option value="fifth">5</option>
+                  <option value="sixth">6</option>
+                  <option value="seventh">7</option>
+                  <option value="eigth">8</option>
+                  <option value="ninth">9</option>
+                  <option value="tenth">10</option>
+              </select>
+          </div>
+             <p>How long have you been stressed at this level?</p>
+             <input type="text" name="years" value="" size="10px" />
+             <p>Would you say you handle stress well?</p>
+             <select name="handleStress">
+                 <option>Yes</option>
+                 <option>No</option>
+             </select>
+            
+        </div>
+               <a href="/health-score/results.html" > <button>Next</button> </a>
+    </body>
+</html>

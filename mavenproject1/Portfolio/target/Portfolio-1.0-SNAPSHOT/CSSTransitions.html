@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>CSS3 Transitions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div{
+                display: block;
+                text-align: center;
+                padding: 40px;
+                margin: auto;
+                font-family: fantasy;
+                color: firebrick;
+                width: 300px;
+                height: 100px;
+            }
+            #alpha{
+                background: navy;
+                transition: linear 3s;
+            }
+            #alpha:hover{
+                background: #69BE28;
+            }
+            #beta{
+                background: purple;
+                transition: 3s;
+            }
+            #beta:hover{
+                transform: rotateY(180deg);
+                background-color: gold;
+                padding: 100px;
+            }
+            #gamma{
+                background: navy;
+            }
+            #gamma:hover{
+                background: #1C8B85;
+                transform: scale(0.2);
+                transition: all 5s ease-in-out;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="alpha">Is this</div>
+        <div id="beta">going to</div>
+        <div id="gamma">change?</div>
+    </body>
+</html>

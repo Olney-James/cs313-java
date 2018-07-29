@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style type="text/css">
+            body {
+                background: #D2D2D2;
+            }
+            h1 {
+                margin: 1rem 0 1rem 3rem;
+                font-family: 'Helvetica';
+                color: darkblue;
+            }
+            div {
+                width: 35rem;
+                height: 8rem;
+                line-height: 4;
+                display: block;
+                text-align: center;
+                font-size: 2rem;
+                color: black;
+                padding: 0.25rem;
+                margin: 2rem auto;
+                cursor: pointer;
+                border: 2px solid grey;
+            }
+            .good {
+                background: red;
+            }
+            .bad {
+                background: blue;
+                color: yellow;
+            }
+            .title
+        </style>
+        <script type="text/javascript">//<![CDATA[
+            window.onload = function () {
+                // detect the click event with "addEventListener"
+                document.getElementById('the-box').addEventListener('click', function () {
+                    // check the class
+                    if (this.classList.contains('bad')) {
+                        // remove bad class and add the good class
+                        this.classList.remove('bad');
+                        this.classList.add('good');
+                    } else {
+                        alert("This button only changes colors once. Sorry!");
+                    }
+                });
+                document.getElementById('title').addEventListener('click', function () {
+                    // get the title's element and upon click, change the title
+                    document.getElementById("title").innerHTML = "You have changed the title!";
+                });
+            }//]]> 
+        </script>
+    </head>
+    <body>
+        <h1 id="title">Click title to change words</h1>
+        <div id="the-box" class="bad">Click box to change colors</div>
+        <br></br>
+        <hr>
+        <form id="frm1" action="form_action.asp">
+            First name: <input type="text" name="fname" value="Donald"><br>
+            Last name: <input type="text" name="lname" value="Duck"><br><br>
+        </form> 
+
+        <p>Click "Try it" to display the value of each element in the form.</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <p id="demo"></p>
+
+        <script>
+            function myFunction() {
+                var x = document.forms["frm1"];
+                var text = "Welcome ";
+                var i;
+                for (i = 0; i < x.length; i++) {
+                    text += x.elements[i].value + " ";
+                } 
+                text += "!";
+                document.getElementById("demo").innerHTML = text;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title> Portfolio | Local Data Storage </title>
+        <meta charset="UTF-8">
+        <meta name="author" content ="Katy Browning">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/sandboxcss.css" type="text/css" rel="stylesheet"/>
+        <link href="/normalize.css.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <hr>
+        <p><b>Saving JSON to local storage </b></p>
+        Book: <input type="text" name="txtBook" id="book" /><br />
+        Chapter: <input type="text" name="txtChapter" id="chapter" /><br />
+        Verse: <input type="text" name="txtVerse" id="verse" /><br />
+        <br />
+        <button onclick="saveData()" type="button" value="Save" id="Save" data-theme="a">Add</button>
+        <button onclick="seeData()" type="button" value="See" id="See" data-theme="a">See</button>
+        <p id="test"></p>
+        <hr>
+        <script>
+            //function setTxt() {
+            //    localStorage.setItem("text", "Scriptures: <br>");
+            //}
+            var count = -1;
+            var txt;
+            var text;
+            function saveData() {
+                var book = document.getElementById("book").value;
+                var chapter = document.getElementById("chapter").value;
+                var verse = document.getElementById("verse").value;
+                count++;
+                localStorage.setItem(count, '{"book":"' + book + '","chapter":"' + chapter + '","verse":"' + verse + '"}');
+                //for (i = 1; i < count; i++) {
+                    //var obj = JSON.parse(localStorage.getItem(i));
+                  //  text[i] = "<br>" + obj.book + " " + obj.chapter + ":" + obj.verse;
+                //}
+                var obj = JSON.parse(localStorage.getItem(count));
+                    text = "<br>" + obj.book + " " + obj.chapter + ":" + obj.verse;
+                
+                //seeData();
+            }
+            function seeData() {
+                
+                document.getElementById("test").innerHTML = text;
+                //for (i = 0; i < txt.length; i++) {
+                //    var text = text + txt[i];
+                //}
+                //document.getElementById("test").innerHTML = text;
+            }
+        </script>
+        
+        
+        
+        <hr>
+        <hr>
+        <header>
+
+        </header>
+        <nav>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/module/navigation.php' ?>  
+
+        </nav>
+        <main>
+
+            <article>
+                <h1>Local Data Storage</h1>
+                <div class="hits">
+                    <script type="text/javascript">
+                        if (localStorage.hits) {
+                            localStorage.hits = Number(localStorage.hits) + 1;
+                        } else {
+                            localStorage.hits = 1;
+                        }
+                        document.write("Total Hits :" + localStorage.hits);
+                    </script>
+                </div>
+
+                <p>Refresh the page to increase number of hits.</p>
+                <p>Close the window and open it again and check the result.</p>
+            </article>
+            <footer>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/module/footer.php' ?> 
+            </footer> 
+        </main>
+
+        <header>
+
+        </header>
+        <nav>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/module/navigation.php' ?>  
+
+        </nav>
+        <main>
+
+
+            <hr>
+            <hr>
+
+            <article>
+                <h1>Store Name</h1>
+                <div id="storename">
+                    <label for="serveri"> Enter Name: </label>
+                    <input type='text' name="server" id="saveServer"/> 
+                    <button onclick="saveData2()" type="button" value="Save" id="Save" data-theme="a">Save</button>
+                    <script> function saveData2() {
+                            var input = document.getElementById("saveServer").value;
+                            localStorage.setItem("server", input);
+                            document.getElementById("saveServer").value = localStorage.getItem("server");
+                            document.write("I have stored the name " + localStorage.getItem("server") + " Hit refresh and then click on retreive name to test my storage capabilities");
+                        }
+
+                        function retrieveName2() {
+                            document.getElementById("saveServer").value = localStorage.getItem("server");
+                        }
+                    </script>
+
+
+                    <div id="saveServer">
+                        <button type="button" onclick="retrieveName2()">Retrieve Name</button>
+                    </div>
+                </div>
+            </article>
+            <footer>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/module/footer.php' ?> 
+            </footer> 
+        </main>
+    </body>
+</html>

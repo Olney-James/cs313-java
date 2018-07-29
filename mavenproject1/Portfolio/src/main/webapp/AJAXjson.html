@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <h3>Below is pulled from a json file:</h3>
+    <div id="json-content"><h2>this is the json</h2></div>
+
+
+    <script>
+// Get content from an external json file.
+        var xhttp_json = new XMLHttpRequest();
+        xhttp_json.onreadystatechange = function () {
+            if (xhttp_json.readyState == 4 && xhttp_json.status == 200) {
+                var obj = xhttp_json.responseText;
+                var test = JSON.parse(obj);
+                var test2 = test.name + " is " + test.age + " years old, studying " + test.major + " is currently a " + test.grade + ". " + test.name + " also works full time as a " + test.title + ".<br><hr>";
+                document.getElementById("json-content").innerHTML = test2;
+            }
+        };
+        xhttp_json.open("GET", "newjson.json", true);
+        xhttp_json.send();
+    </script>
+    <hr>
+    <h3>Below is pulled from a txt file:</h3>
+    <p id="demo">Let AJAX change this text.</p>
+
+    <button type="button" onclick="loadDoc()">Change Content</button>
+
+    <script>
+        function loadDoc() {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                // code for modern browsers
+                xhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    document.getElementById("demo").innerHTML = xhttp.responseText;
+                }
+            };
+            xhttp.open("GET", "index.txt", true);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>

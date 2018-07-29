@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="home">
+    <head>
+        <title>Health Tips</title>
+        <link href="healthScoreCSS.css" type="text/css" rel="stylesheet"/>
+        <style>
+            /* The Modal (background) */
+            @-webkit-keyframes modal {
+                0% {
+                    display: block;
+                    opacity: 1;
+                }
+                50% {
+                    display: block;
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes modal {
+                0% {
+                    display: block;
+                    opacity: 1;
+                }
+                50% {
+                    display: block;
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            .modal {
+                //display: block; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                background-color: #69dcf8; /* Black w/ opacity */
+                -webkit-animation-name: modal; /* Chrome, Safari, Opera */
+                -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+                animation-name: modal;
+                animation-duration: 4s;
+                -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+                
+            }
+
+            /* Modal Content/Box */
+            .modal-content {
+                background-color: #69dcf8;
+                margin: 15% auto; /* 15% from the top and centered */
+                padding: 15px;
+                width: 100%; /* Could be more or less, depending on screen size */
+                color: white;
+                font-size: 200%;
+                text-align: center;
+            }
+
+            /* The Close Button */
+            
+        </style>
+    </head>
+    <body>
+        <h1 class="title">Health Tips</h1>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div id="healthtips"></div>
+            </div>
+
+        </div>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis accumsan ante, vel mollis mauris feugiat vitae. Curabitur sollicitudin lectus eu urna vestibulum facilisis. Donec dolor risus, porttitor ac auctor quis, lacinia et tellus. Pellentesque venenatis placerat turpis, non tristique enim. Sed malesuada lorem a mauris convallis porta. Sed dignissim purus orci, eleifend volutpat metus convallis ut. In non urna in leo fermentum consectetur a nec risus. Integer facilisis eget turpis vitae dictum.</p>
+        <p>Aenean egestas purus accumsan ex consequat, et ultrices dui porta. In hac habitasse platea dictumst. Integer vehicula efficitur leo, nec auctor justo. Duis facilisis porta dui vel fermentum. Aliquam sollicitudin ante sit amet ligula sodales, et porttitor est tempus. Morbi interdum lorem eget euismod luctus. Morbi rhoncus nulla sed dolor molestie egestas. Sed rhoncus nunc tincidunt, consectetur sem id, viverra orci. Vivamus ac tincidunt nunc. Vivamus placerat eleifend dui ut eleifend. Phasellus id tristique risus.</p>
+        <p>Aenean quis dolor dolor. Mauris libero ipsum, pellentesque in purus quis, sagittis euismod leo. Phasellus lacinia nulla non fermentum ullamcorper. Integer sit amet augue sapien. Sed aliquet augue ut enim interdum lobortis. Maecenas ut mauris tempor, interdum quam nec, fringilla nisl. Nullam pellentesque placerat tellus et aliquet. Suspendisse vulputate scelerisque felis in porttitor. Nam odio odio, fringilla at sapien eu, finibus dignissim diam. Quisque et lorem id felis tincidunt bibendum ac in augue. Vivamus metus enim, rhoncus ut turpis ac, mollis cursus massa.</p>
+        <p>Nam lobortis ullamcorper vehicula. Quisque pulvinar mauris non nisl porttitor tincidunt at sit amet justo. Sed iaculis augue ac ex suscipit, ut laoreet leo malesuada. In hac habitasse platea dictumst. Cras viverra, nunc a fringilla ullamcorper, nulla magna rhoncus elit, ut venenatis odio dui eget sem. Praesent iaculis tortor placerat aliquet lobortis. Morbi scelerisque pharetra neque nec sollicitudin. Pellentesque felis nisl, posuere vitae lorem vel, tincidunt mattis lacus. Maecenas at purus id purus volutpat accumsan. Vestibulum accumsan, nulla at consequat consectetur, dui neque interdum orci, nec porta nunc erat sed ante.</p>
+        <p>Etiam sed dolor et ipsum blandit laoreet id vitae magna. In hac habitasse platea dictumst. Nam dapibus non metus eget tempor. Vivamus sapien purus, lacinia congue enim et, egestas congue nulla. Curabitur pharetra congue pharetra. Aliquam interdum finibus facilisis. Nam vel nisl sit amet sem pharetra congue at in est. Fusce efficitur pulvinar nulla vitae dictum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis accumsan ante, vel mollis mauris feugiat vitae. Curabitur sollicitudin lectus eu urna vestibulum facilisis. Donec dolor risus, porttitor ac auctor quis, lacinia et tellus. Pellentesque venenatis placerat turpis, non tristique enim. Sed malesuada lorem a mauris convallis porta. Sed dignissim purus orci, eleifend volutpat metus convallis ut. In non urna in leo fermentum consectetur a nec risus. Integer facilisis eget turpis vitae dictum.</p>
+        <p>Aenean egestas purus accumsan ex consequat, et ultrices dui porta. In hac habitasse platea dictumst. Integer vehicula efficitur leo, nec auctor justo. Duis facilisis porta dui vel fermentum. Aliquam sollicitudin ante sit amet ligula sodales, et porttitor est tempus. Morbi interdum lorem eget euismod luctus. Morbi rhoncus nulla sed dolor molestie egestas. Sed rhoncus nunc tincidunt, consectetur sem id, viverra orci. Vivamus ac tincidunt nunc. Vivamus placerat eleifend dui ut eleifend. Phasellus id tristique risus.</p>
+        <p>Aenean quis dolor dolor. Mauris libero ipsum, pellentesque in purus quis, sagittis euismod leo. Phasellus lacinia nulla non fermentum ullamcorper. Integer sit amet augue sapien. Sed aliquet augue ut enim interdum lobortis. Maecenas ut mauris tempor, interdum quam nec, fringilla nisl. Nullam pellentesque placerat tellus et aliquet. Suspendisse vulputate scelerisque felis in porttitor. Nam odio odio, fringilla at sapien eu, finibus dignissim diam. Quisque et lorem id felis tincidunt bibendum ac in augue. Vivamus metus enim, rhoncus ut turpis ac, mollis cursus massa.</p>
+        <p>Nam lobortis ullamcorper vehicula. Quisque pulvinar mauris non nisl porttitor tincidunt at sit amet justo. Sed iaculis augue ac ex suscipit, ut laoreet leo malesuada. In hac habitasse platea dictumst. Cras viverra, nunc a fringilla ullamcorper, nulla magna rhoncus elit, ut venenatis odio dui eget sem. Praesent iaculis tortor placerat aliquet lobortis. Morbi scelerisque pharetra neque nec sollicitudin. Pellentesque felis nisl, posuere vitae lorem vel, tincidunt mattis lacus. Maecenas at purus id purus volutpat accumsan. Vestibulum accumsan, nulla at consequat consectetur, dui neque interdum orci, nec porta nunc erat sed ante.</p>
+        
+        <script>
+
+            function exerciseScoreTips(arr) {
+                var rand = Math.floor(Math.random() * (10 - 0 + 1)) + 0;
+                var out = "";
+                var i;
+                for (i = 0; i < arr.length; i++) {
+                    if (i === rand) {
+                        out += arr[i].tip + '<br>';
+                        break;
+                    }
+                }
+                document.getElementById("healthtips").innerHTML = out;
+            }
+
+
+        </script>
+        <script src="healthtips.js"></script>
+    </body>
+</html>

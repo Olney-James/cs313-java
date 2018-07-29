@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Results Screen</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="healthScoreCSS.css" type="text/css" rel="stylesheet"/>
+        <style>
+            /* The Modal (background) */
+            @-webkit-keyframes modal {
+                0% {
+                    display: block;
+                    opacity: 1;
+                }
+                50% {
+                    display: block;
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes modal {
+                0% {
+                    display: block;
+                    opacity: 1;
+                }
+                50% {
+                    display: block;
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            .modal {
+                //display: block; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                background-color: #69dcf8; /* Black w/ opacity */
+                -webkit-animation-name: modal; /* Chrome, Safari, Opera */
+                -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+                animation-name: modal;
+                animation-duration: 4s;
+                -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+
+            }
+
+            /* Modal Content/Box */
+            .modal-content {
+                background-color: #69dcf8;
+                margin: 15% auto; /* 15% from the top and centered */
+                padding: 15px;
+                width: 100%; /* Could be more or less, depending on screen size */
+                color: white;
+                font-size: 200%;
+                text-align: center;
+            }            
+        </style>
+    </head>
+    <body>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div id="healthtips"></div>
+            </div>
+
+        </div>
+
+        <div class="resultBox">
+            <img src="/images/resultheart.png" alt="Results">
+
+        </div>
+        <div class="resultBD">
+            <p>Basic</p>
+            <p>Food</p>
+            <p>Exercise</p>
+            <p>Sleep</p>
+            <p>Stress</p>        
+        </div>
+        <div class="explanation">
+        </div>
+        <script>
+
+            function exerciseScoreTips(arr) {
+                var rand = Math.floor(Math.random() * (10 - 0 + 1)) + 0;
+                var out = "";
+                var i;
+                for (i = 0; i < arr.length; i++) {
+                    if (i === rand) {
+                        out += arr[i].tip + '<br>';
+                        break;
+                    }
+                }
+                document.getElementById("healthtips").innerHTML = out;
+            }
+
+
+        </script>
+        <script src="healthtips.js"></script>
+    </body>
+</html>

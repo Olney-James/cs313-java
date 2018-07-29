@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Add New Scripture</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <hr>
+        <p><b>Saving JSON to local storage </b></p>
+        Book: <input type="text" name="txtBook" id="book" /><br />
+        Chapter: <input type="text" name="txtChapter" id="chapter" /><br />
+        Verse: <input type="text" name="txtVerse" id="verse" /><br />
+        <br />
+        <button onclick="saveData()" type="button" value="Save" id="Save" data-theme="a">Add</button>
+        <button onclick="seeData()" type="button" value="See" id="See" data-theme="a">See</button>
+        <p id="test"></p>
+        <hr>
+        <script>
+            //function setTxt() {
+            //    localStorage.setItem("text", "Scriptures: <br>");
+            //}
+            var count = -1;
+            var txt;
+            var text = [];
+            function saveData() {
+                var book = document.getElementById("book").value;
+                var chapter = document.getElementById("chapter").value;
+                var verse = document.getElementById("verse").value;
+                count++;
+                localStorage.setItem(count, '{"book":"' + book + '","chapter":"' + chapter + '","verse":"' + verse + '"}');
+                for (i = 0; i < count; i++) {
+                    var obj = JSON.parse(localStorage.getItem(i));
+                    text[i] = "<br>" + obj.book + " " + obj.chapter + ":" + obj.verse;
+                }
+                
+                //seeData();
+            }
+            function seeData() {
+                
+                document.getElementById("test").innerHTML = text.toString();
+                //for (i = 0; i < txt.length; i++) {
+                //    var text = text + txt[i];
+                //}
+                //document.getElementById("test").innerHTML = text;
+            }
+        </script>
+
+    </body>
+</html>

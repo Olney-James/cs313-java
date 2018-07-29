@@ -1,0 +1,10 @@
+UserVerification\model\User.class
+Comments\CreatePost.class
+UserVerification\Verify.class
+Comments\ShowPosts.class
+Comments\CreateFile.class
+UserVerification\logOut.class
+Comments\model\FileCommentHandler.class
+Comments\ResetCommentsFile.class
+Comments\model\Comment.class
+UserVerification\model\FileUserPassHandler.class

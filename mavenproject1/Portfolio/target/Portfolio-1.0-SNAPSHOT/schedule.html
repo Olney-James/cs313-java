@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>JSON Example: Object From String</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <select id="amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>How many events would you like to see on the schedule?<br><button id="pplButton"name="Show Schedule Events!" onclick="loopArray()">Show Scheduled Events!</button>
+            <p id="show_schedule"></p>
+            <script>
+                function loopArray() {
+                var schedule = '{ "lessonsched" : [' +
+                        '{"subject" : "The software development process and some standard methodologies", "student" : "Katy", "date" : "5/5"},' +
+                        '{"subject" : "Creative, pleasant, mobile user interface creation", "student" : "Kevin", "date" : "5/5"},' +
+                        '{"subject" : "JavaScript objects", "student" : "Meghan", "date" : "5/5"},' +
+                        '{"subject" : "DOM manipulation", "student" : "Tyler", "date" : "5/11"},' +
+                        '{"subject" : "CSS3 transitions", "student" : "Adam", "date" : "5/11"},' +
+                        '{"subject" : "CSS3 animations", "student" : "Katy", "date" : "5/11"},' +
+                        '{"subject" : "Using local data storage", "student" : "Katy", "date" : "5/18"},' +
+                        '{"subject" : "AJAX interactions with remote services", "student" : "Silvere", "date" : "5/18"},' +
+                        '{"subject" : "JSON data serialization", "student": "James", "date" : "5/18"} ] }';
+                var obj = JSON.parse(schedule);
+                var input = document.getElementById("amount").value;
+                
+                    var output = "";
+                    var i;
+                    for (i = 0; i < input; i++) {
+                        output +=  i+1 + ". ";
+                        output += obj.lessonsched[i]["student"] + ": " +obj.lessonsched[i]["subject"]+" | "+obj.lessonsched[i]["date"]+"<br>";
+                   }                   
+                    document.getElementById("show_schedule").innerHTML = output;
+                }
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Sleep Questions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="healthScoreCSS.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+         <div class="topBar">
+             <p>   Sleep Habits </p>
+        </div>
+        <div class="questions">
+            <p>How many total hours of sleep do you get each night? <input type="text" id="totalSleep" /></p>
+            <p>How many UNINTERRUPTED hours of sleep do you get each night? <input type="text" id="uninterruptedSleep" /></p>
+            <p>On a scale from 1 to 10, 10 being deep and 1 being light. How deeply do you sleep each night? <input type="text" id="howDeeply" /></p>
+            <script>
+                function saveData() {
+                    var totalSleep = document.getElementById("totalSleep").value;
+                    var uninterruptedSleep = document.getElementById("uninterruptedSleep").value;
+                    var howDeeply = document.getElementById("howDeeply").value;
+                    localStorage.setItem("sleep", '{"totalSleep":"' + totalSleep + '","uninterruptedSleep":"' + uninterruptedSleep + '","howDeeply":"' + howDeeply + '"}');
+                    var obj = JSON.parse(localStorage.getItem("sleep"));
+                    text = "<br>Sleep: " + obj.totalSleep + "<br>uninterruptedSleep: " + obj.uninterruptedSleep + "<br>howDeeply: " + obj.howDeeply;
+                    document.getElementById("test").innerHTML = text;
+                }
+
+            </script>
+        </div>
+           <!--<a href="/health-score/stress.html" >--> <button onclick="saveData()">Next</button> <!--</a>-->
+           <p id="test"></p>
+    </body>
+</html>

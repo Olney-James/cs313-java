@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title draggable="true" >JSON demonstration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p id="students"></p>
+        <script>
+
+            var jsonArray = [//array of objects separated by commas and kept within square braces
+                {//object 0 with name/values separated by commas and kept within curly braces
+                    "name": "James Olney", "age": "25", "major": "Software Engineering", "grade": "Sophomore", "title": "Software Test Engineer"
+                },
+                {//object 1 with name/values separated by commas and kept within curly braces
+                    "name": "Camilla Olney", "age": "22", "major": "Accounting", "grade": "Junior", "title": "Corporate Trainer of Sales and Service"
+                },
+                {//object 2 with name/values separated by commas and kept within curly braces
+                    "name": "Jared Allen", "age": "27", "major": "Information Technology", "grade": "Sophomore", "title": "Software Test Engineer"
+                }
+            ]
+            //use DOM to get paragraph from above and print the JSON within it.
+            document.getElementById("students").innerHTML =
+                    //object 0
+                    jsonArray[0].name + " is " + jsonArray[0].age + " years old, studying " + jsonArray[0].major + " is currently a " + jsonArray[0].grade + ". " + jsonArray[0].name + " also works full time as a " + jsonArray[0].title + ".<br><hr>"
+                    //object 1
+                    + jsonArray[1].name + " is " + jsonArray[1].age + " years old, studying " + jsonArray[1].major + " is currently a " + jsonArray[1].grade + ". " + jsonArray[1].name + " also works full time as a " + jsonArray[1].title + ".<br><hr>" +
+                    //object 2
+                    jsonArray[2].name + " is " + jsonArray[2].age + " years old, studying " + jsonArray[2].major + " is currently a " + jsonArray[2].grade + ". " + jsonArray[2].name + " also works full time as a " + jsonArray[2].title + ".<br><hr>";
+            //See http://www.w3schools.com/json/default.asp for more information or email me @ jamesolney1@gmail.com
+        </script>
+    </body>
+</html>

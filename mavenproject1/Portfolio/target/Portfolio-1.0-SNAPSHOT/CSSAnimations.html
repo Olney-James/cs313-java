@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>CSS3 Animations</title>
+        <style> 
+            #funbox {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position:relative;
+                -webkit-animation-name: example; /* Chrome, Safari, Opera */
+                -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+                -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+                animation-name: example;
+                animation-duration: 12s;
+                animation-iteration-count: infinite;
+            }
+            /* Chrome, Safari, Opera */
+            @-webkit-keyframes example {
+                0%   {background-color:red; left:0px; top:0px;}
+                25%  {background-color:yellow; left:200px; top:0px;}
+                50%  {background-color:blue; left:200px; top:200px;}
+                75%  {background-color:green; left:0px; top:200px;}
+                100% {background-color:red; left:0px; top:0px;}
+            }
+            /* Standard syntax */
+            @keyframes example {
+                0%   {background-color:red; left:0px; top:0px;}
+                25%  {background-color:yellow; left:400px; top:0px;}
+                50%  {background-color:blue; left:400px; top:200px;}
+                75%  {background-color:green; left:0px; top:200px;height:20px;border-radius:45px;}
+                100% {background-color:red; left:0px; top:0px;}
+            }
+
+            div {
+                position: relative;
+            }
+            .bad {
+                background-color: red;
+                animation-name: example1;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            .small {
+                width: 100px;
+                height: 25px;
+                background-color: blue;
+                color:white;
+                position: relative;
+                text-align: center;
+            }
+            .small1{
+                width: 100px;
+            }
+
+            .big {
+                width: 150px;
+                height: 75px;
+                background-color: blue;
+                text-align: center;
+                position: relative;
+                animation-name: button;
+                animation-duration: 12s;
+                animation-iteration-count: infinite;
+            }
+
+            .button {
+                width: 100px;
+                height: 25px;
+                position: relative;
+                background-color: yellow;
+                color: black;
+                animation-name: button;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                text-align: center;
+                animation-direction: alternate;
+            }
+
+            @keyframes button {
+                0%   {background-color: red; color: white; border-radius:0px; height: 150px; width: 125px; text-transform: lowercase; font-size: 30px;}
+                25%  {background-color: yellow; color: black; border-radius:25px; height 175px; width: 150px; text-transform: lowercase; font-size: 26px;}
+                50%  {background-color: blue; color: white; border-radius:45px; height 200px; width: 175px; text-transform: uppercase; font-size: 22px;}
+                75%  {background-color: pink; color: black; border-radius:65px; height 225px; width: 200px; text-transform: uppercase; font-size: 18px;}
+                100% {background-color: green; color: yellow; border-radius:85px; height 250px; width: 225px; text-transform: uppercase; font-size: 14px;}
+            }
+
+            @keyframes example1 {
+                0%   {background-color: red; text-transform: lowercase; font-size: 30px; color: yellow; left: 0px; top: 0px;}
+                25%  {background-color: blue; text-transform: lowercase; font-size: 26px; color: white; left: 0px; top: 200px; width: 150px; height: 150px}
+                50%  {background-color: green; text-transform: uppercase; font-size: 22px; color: teal; left: 200px; top: 200px; width: 200px; height:200px;}
+                75%  {background-color: yellow; text-transform: uppercase; font-size: 18px; color: blue; left: 200px; top: 0px; width: 250px; height: 250px;}
+                100% {background-color:red; text-transform: uppercase; font-size: 14px; color: orange; left: 0px; top: 0px; width: 300px; height: 300px;}
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="button" onclick="function1()">Click me</div>
+
+        <script>
+            function function2() {
+                if (document.getElementById("button2").classList.contains('small')) {
+                    document.getElementById("button2").classList.remove('small');
+                    document.getElementById("button2").classList.add('big');
+                } else {
+                    document.getElementById("button2").classList.remove('big');
+                    document.getElementById("button2").classList.add('small');
+                }
+            }
+
+        </script>
+
+        <div class="small" id="button2" onmouseover="function2()">mouse over Me</div>
+        
+        <script>
+            function function1() {
+                //document.getElementById("demo").innerHTML = "Hello World";
+                // check the class
+
+                if (document.getElementById("demo").classList.contains('bad')) {
+                    // remove bad class and add the good class
+                    document.getElementById("demo").classList.remove('bad');
+                    document.getElementById("demo").classList.add('good');
+                    document.getElementById("demo").innerHTML = "";
+                } else {
+                    document.getElementById("demo").classList.remove('good');
+                    document.getElementById("demo").classList.add('bad');
+                    document.getElementById("demo").innerHTML = "take that! CSS world!";
+                }
+
+            }
+        </script>
+        
+        <div id="demo" class="small1" ></div>
+        <hr>
+        <h3>The FunBox</h3>
+        <div id="funbox"></div>
+    </body>
+</html>

@@ -1,0 +1,162 @@
+
+@font-face{
+    font-family:"Novecento Sans Wide";
+    src:url(/fonts/Novecentosanswide-Normal.otf) format('opentype');
+}
+
+html{
+    background-color: white;
+}
+
+/*healthtips.html styling */
+.healthtips_class {
+    padding: 200px;
+}
+
+.topBar {
+    font-family: "Novecento Sans Wide", sans-serif;
+    color: white;
+    text-align: center;
+    background-color: #69DCF8;
+    margin: -8px 0px 30px -8px;
+    padding: 10px;
+    width: 100%;
+    border-bottom: solid 4px #AFD35B;
+}
+
+.topBar p {
+    font-size: xx-large;
+    font-family: "Novecento Sans Wide", sans-serif;
+}
+
+button {
+    background-color: #69dcf8;
+    float: right;
+    padding: 5px 10px 7px 10px;
+    color: white;
+    font-size: larger;
+    border: none;
+    font-family: "Novecento Sans Wide", sans-serif;
+}
+
+
+  .questions p {
+    color: #afd35b;
+    padding-bottom: 20px;
+    font-family: "Novecento Sans Wide", sans-serif;
+    margin-left: 24px;
+}
+/* Styling for home screen */
+.home{
+    background-color: #69DCF8;
+}
+
+.one{
+    text-align:left;
+    float: right;
+    color: white;
+    font-family: "Novecento Sans Wide", sans-serif;
+    font-size: 1.75em;
+    float:left;
+ 
+    
+}
+
+.two{
+    text-align:left;
+    color: white;
+    font-family: "Novecento Sans Wide", sans-serif;
+    font-size: 1.75em;
+    clear:left;
+   
+   
+    
+}
+
+.beat{
+    width:150%;
+   
+ 
+}
+
+.title{
+    float:right;
+    width:20%;
+    position:relative;
+    left:100px;
+    top:50px;
+   
+}
+
+/* styling for results screen*/
+.resultBD {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.resultBD p {
+    width: 100%;
+    background-color: #69DCF8;
+    padding: 20PX;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    font-family: "Novecento Sans Wide", sans-serif;
+    color:white;
+    font-size:1.5em;
+}
+.resultBox img {
+    width: 65%;
+    text-align: center;
+}
+.resultBox{
+    text-align: center;
+    margin-top:20px;
+}
+.resultBD p:nth-of-type(even){
+    background-color:#AED42A;
+}
+@media screen and (min-width: 655px){
+    
+    .topBar{
+         padding: 20px;
+    }
+    
+    .topBar p{
+        font-size:2.5em;
+    }
+    
+    .questions p{
+        font-size:1.5em;
+    }
+    
+    button{
+        font-size:2em;
+        margin-right:45px;
+    }
+    .one .two{
+        font-size:5em;
+    }
+    .title{
+        width:20%;
+        font-size: 2em;
+        margin-right:40px;
+    }
+    .resultBox img {
+    width: 50%;
+    text-align: center;
+}
+.resultBD p {
+    font-size:2em;
+}
+.beat{
+    width:120%;
+   
+ 
+}
+}
+
+
+
+
